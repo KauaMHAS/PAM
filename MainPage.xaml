@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DiceRoller_Kaua_Julia.MainPage"
+    Title="Dice Roller">
+
+    <VerticalStackLayout Padding="30" Spacing="12">
+
+        <Image x:Name="DiceImage"
+           HeightRequest="200"
+           HorizontalOptions="Center" />
+
+        <Label Text="Tipo de dado:" />
+        <Picker x:Name="DiceTypePicker" Title="Escolha D6, D8…">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>D6</x:String>
+                    <x:String>D8</x:String>
+                    <x:String>D10</x:String>
+                    <x:String>D12</x:String>
+                    <x:String>D16</x:String>
+                    <x:String>D20</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Escolha um número:" />
+        <Picker x:Name="NumberPicker" Title="1 até N" />
+
+        <Button Text="Rolar" Clicked="OnRollButtonClicked" />
+
+        <Label x:Name="SumLabel"       Text="Soma dos lados opostos: 0" />
+        <Label x:Name="VictoriesLabel" Text="Total de vitórias: 0" />
+        <Label x:Name="StreakLabel"    Text="Sequência de vitórias: 0" />
+
+    </VerticalStackLayout>
+</ContentPage>
